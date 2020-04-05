@@ -1,0 +1,33 @@
+.dishContaienr{
+    display: flex;
+    flex-direction: column;
+}
+.menu{
+    background-color: #ff6b09;
+    height: 70px;
+    font-size: 1.4rem;
+
+    &__list {
+        display: flex;
+        list-style: none;  
+        justify-content: space-around;
+        
+    }
+    &__item {
+        text-transform: uppercase;
+        display: block;
+        height: 56px;
+        padding: auto;
+        
+        
+        &:hover{
+            border-bottom: 4px #fff solid
+        }
+    }
+
+    &__link {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 0px 35px 0px
+    }
+}
