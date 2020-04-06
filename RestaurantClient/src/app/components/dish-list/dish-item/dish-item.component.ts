@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Dish } from 'src/app/models/dish.model';
 
 @Component({
   selector: 'app-dish-item',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DishItemComponent implements OnInit {
 
+  @Input() dish: Dish
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log("danie: ");
+    console.log(this.dish);
   }
 
 }

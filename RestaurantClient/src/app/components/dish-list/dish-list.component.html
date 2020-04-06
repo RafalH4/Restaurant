@@ -8,5 +8,9 @@
         </ul>
     </nav>
     <div class="dishList">
+        <div class="dishItem" *ngFor="let dish of dishes">
+          <app-dish-item [dish]="dish"></app-dish-item>
+        
+        </div>
     </div>
 </div>

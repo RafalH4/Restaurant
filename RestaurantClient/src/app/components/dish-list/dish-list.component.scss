@@ -27,3 +27,18 @@
         }
     }
 }
+
+.dishList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.dishItem{
+    max-width: 200px;
+    object-fit: contain;
+    background-color: red;
+    
+
+}
