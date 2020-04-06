@@ -4,30 +4,26 @@
 }
 .menu{
     background-color: #ff6b09;
-    height: 70px;
     font-size: 1.4rem;
-
-    &__list {
+    &__list{
         display: flex;
-        list-style: none;  
-        justify-content: space-around;
-        
-    }
-    &__item {
-        text-transform: uppercase;
-        display: block;
-        height: 56px;
-        padding: auto;
-        
-        
-        &:hover{
-            border-bottom: 4px #fff solid
-        }
+        list-style: none;
+        justify-content: space-between;
     }
 
-    &__link {
+    &__item{
+        margin-top: 0px;
+        padding: 20px 0px;
+        flex-grow: 1;
+        
+
+    }
+    &__link{
+        padding: 10px;
         color: #fff;
         text-decoration: none;
-        padding: 10px 0px 35px 0px
+        &:hover{
+            border-bottom:2px white solid;
+        }
     }
 }
