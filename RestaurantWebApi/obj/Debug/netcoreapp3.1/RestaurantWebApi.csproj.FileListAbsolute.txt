@@ -45,6 +45,11 @@ E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\RestaurantWebApi
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\RestaurantWebApi.dll
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\RestaurantWebApi.pdb
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cache
 E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.dll
 E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.pdb
+E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cs
+E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cache

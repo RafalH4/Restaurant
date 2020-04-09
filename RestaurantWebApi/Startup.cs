@@ -32,6 +32,9 @@ namespace RestaurantWebApi
                 opt.UseSqlServer(dbConnection));
 
             services.AddControllers();
+            
+            services.AddSwaggerGen(opt =>
+                opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "RestaurantApi", Version = "v1" }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +44,10 @@ namespace RestaurantWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(opt =>
+                opt.SwaggerEndpoint("/swagger/v1/swagger.json", "My Api V1"));
 
             app.UseHttpsRedirection();
 
