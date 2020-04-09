@@ -1,4 +1,5 @@
 ﻿
+using RestaurantWebApi.DishDirectory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace RestaurantWebApi.OrderDirectory
         public string Description { get; set; }
         public string Price { get; set; }
         public string ImageUrl { get; set; }
+        public List<Dish> Dishes { get; set; }
     }
 }
