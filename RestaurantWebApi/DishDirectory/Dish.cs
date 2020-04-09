@@ -8,9 +8,11 @@ namespace RestaurantWebApi.DishDirectory
     public class Dish
     {
         public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string SecondName { get; set; }
-        public string MyProperty { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Price { get; set; }
+        public string TypeOfFood { get; set; }
+        public string ImageUrl { get; set; }
+        
     }
 }
