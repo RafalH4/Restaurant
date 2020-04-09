@@ -7,10 +7,10 @@ namespace RestaurantWebApi.DishDirectory
 {
     public interface IDishRepository
     {
-        public Task Add(Dish dish);
-        public Task GetById(Guid id);
-        public Task GetByType(string type);
-        public Task Delete(Guid id);
-        public Task Update(Task task);
+        Task Add(Dish dish);
+        Task<Dish> GetById(Guid id);
+        Task<IEnumerable<Dish>> GetByType(string type);
+        Task Delete(Dish dish);
+        Task Update(Dish dish);
     }
 }

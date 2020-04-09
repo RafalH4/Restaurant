@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RestaurantWebApi.Data;
+using RestaurantWebApi.DishDirectory;
 
 namespace RestaurantWebApi
 {
@@ -35,6 +36,8 @@ namespace RestaurantWebApi
             
             services.AddSwaggerGen(opt =>
                 opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "RestaurantApi", Version = "v1" }));
+
+            services.AddScoped<IDishRepository, DishRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
