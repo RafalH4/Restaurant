@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RestaurantWebApi.Data;
 using RestaurantWebApi.DishDirectory;
+using RestaurantWebApi.Utilities;
 
 namespace RestaurantWebApi
 {
@@ -33,11 +35,19 @@ namespace RestaurantWebApi
                 opt.UseSqlServer(dbConnection));
 
             services.AddControllers();
+
+            var autoMapperConfig = new MapperConfiguration(opt => {
+                opt.AddProfile(new AutoMapping());
+            });
+
+            IMapper mapper = autoMapperConfig.CreateMapper();
             
             services.AddSwaggerGen(opt =>
                 opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "RestaurantApi", Version = "v1" }));
 
+            services.AddSingleton(mapper);
             services.AddScoped<IDishRepository, DishRepository>();
+            services.AddScoped<IDishService, DishService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

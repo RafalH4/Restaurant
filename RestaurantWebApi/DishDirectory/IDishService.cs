@@ -1,15 +1,17 @@
-﻿using System;
+﻿using RestaurantWebApi.DishDirectory.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace RestaurantWebApi.DishDirectory
 {
-    public class IDishService
+    public interface IDishService
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Price { get; set; }
-        public string TypeOfFood { get; set; }
+        Task Add(AddDishDto dishDto);
+        Task Delete(Guid id);
+        Task Update(AddDishDto dishDto);
+        Task<DishDto> GetById(Guid id);
+        Task<IEnumerable<DishDto>> GetByType(string type);
     }
 }
