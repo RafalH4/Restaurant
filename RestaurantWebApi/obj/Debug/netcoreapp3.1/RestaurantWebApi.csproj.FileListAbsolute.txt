@@ -53,3 +53,5 @@ E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspN
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cs
 E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cache
+E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.Properties.Resources.resources
+E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.csproj.GenerateResource.cache
