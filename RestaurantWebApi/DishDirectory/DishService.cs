@@ -20,29 +20,37 @@ namespace RestaurantWebApi.DishDirectory
         public async Task Add(AddDishDto dishDto)
         {
             var dish = _mapper.Map<Dish>(dishDto);
-            var dish2 = _mapper.Map<Dish>(dishDto);
-            var dish3 = _mapper.Map<Dish>(dishDto);
+            await _repository.Add(dish);
 
         }
 
-        public Task Delete(Guid id)
+        public async Task Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var dish = await _repository.GetById(id);
+            await _repository.Delete(dish);
         }
 
-        public Task<DishDto> GetById(Guid id)
+        public async Task<DishDto> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            var dish = await _repository.GetById(id);
+            return _mapper.Map<DishDto>(dish);
+        }
+              
+        
+
+        public async Task<IEnumerable<DishDto>> GetByType(string type)
+        {
+            var dishes = await _repository.GetByType(type);
+            var dishesDto = _mapper.Map<IEnumerable<Dish>, List<DishDto>>(dishes);
+            return dishesDto;
         }
 
-        public Task<IEnumerable<DishDto>> GetByType(string type)
+        public async Task Update(EditDishDto dishDto)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task Update(AddDishDto dishDto)
-        {
-            throw new NotImplementedException();
+            var dish = await _repository.GetById(dishDto.Id);
+            dish.Name = dishDto.Name;
+            dish.Price = dishDto.Price;
+            dish.TypeOfFood = dishDto.TypeOfFood;
         }
     }
 }
