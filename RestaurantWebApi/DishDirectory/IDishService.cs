@@ -10,7 +10,7 @@ namespace RestaurantWebApi.DishDirectory
     {
         Task Add(AddDishDto dishDto);
         Task Delete(Guid id);
-        Task Update(AddDishDto dishDto);
+        Task Update(EditDishDto dishDto);
         Task<DishDto> GetById(Guid id);
         Task<IEnumerable<DishDto>> GetByType(string type);
     }
