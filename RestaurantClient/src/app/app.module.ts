@@ -8,6 +8,7 @@ import { OrderListComponent } from './components/order-list/order-list.component
 import { OrderItemComponent } from './components/order-list/order-item/order-item.component';
 import { DishListComponent } from './components/dish-list/dish-list.component';
 import { DishItemComponent } from './components/dish-list/dish-item/dish-item.component';
+import { TestComponentComponent } from './test-component/test-component.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DishItemComponent } from './components/dish-list/dish-item/dish-item.co
     OrderListComponent,
     OrderItemComponent,
     DishListComponent,
-    DishItemComponent
+    DishItemComponent,
+    TestComponentComponent
   ],
   imports: [
     BrowserModule,
