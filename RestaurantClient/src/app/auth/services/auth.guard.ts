@@ -5,16 +5,17 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
 
   constructor(private router: Router) {
-    
+
   }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-      this.router.navigate(['/login'])
+      alert("Access denied")
+      this.router.navigate([''])
+      
     return false;
   }
   
