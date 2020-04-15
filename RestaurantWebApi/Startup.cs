@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RestaurantWebApi.Data;
 using RestaurantWebApi.DishDirectory;
+using RestaurantWebApi.UserDirectory;
 using RestaurantWebApi.Utilities;
 
 namespace RestaurantWebApi
@@ -48,6 +49,9 @@ namespace RestaurantWebApi
             services.AddSingleton(mapper);
             services.AddScoped<IDishRepository, DishRepository>();
             services.AddScoped<IDishService, DishService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IJwtHandler, JwtHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

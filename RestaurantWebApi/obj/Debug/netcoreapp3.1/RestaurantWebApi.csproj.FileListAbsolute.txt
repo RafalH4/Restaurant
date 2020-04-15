@@ -55,8 +55,6 @@ E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi
 E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.csproj.GenerateResource.cache
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cs
-E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cache
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -130,3 +128,9 @@ E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\ru\Microsoft.Cod
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\Projekty\Restaurant\RestaurantWebApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cs
+E:\Projekty\Restaurant\RestaurantWebApi\obj\Debug\netcoreapp3.1\RestaurantWebApi.MvcApplicationPartsAssemblyInfo.cache

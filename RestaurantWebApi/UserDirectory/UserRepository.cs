@@ -28,10 +28,10 @@ namespace RestaurantWebApi.UserDirectory
         }
 
         public async Task<User> GetById(Guid id)
-            => await Task.FromResult(_dataContext.Users.FirstOrDefault(user => user.Id == id));
+            => await Task.FromResult(_dataContext.Users.SingleOrDefault(user => user.Id == id));
 
         public async Task<User> GetByUserName(string email)
-            => await Task.FromResult(_dataContext.Users.FirstOrDefault(user => user.Email == email));
+            => await Task.FromResult(_dataContext.Users.SingleOrDefault(user => user.Email == email));
 
         public async Task Update(User user)
         {
