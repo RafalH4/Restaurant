@@ -23,7 +23,8 @@ namespace RestaurantWebApi.Utilities
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, user.Id.ToString()),
-                new Claim(ClaimTypes.Email, user.Email)
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, "admin")
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8
                 .GetBytes(_config.GetSection("AppSettings:Token").Value));
