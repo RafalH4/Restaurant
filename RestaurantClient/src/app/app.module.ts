@@ -9,10 +9,11 @@ import { CookieService} from 'ngx-cookie-service'
 import { JwtHelperService, JwtModule, JWT_OPTIONS } from "@auth0/angular-jwt";
 import { AuthService } from './auth/services/auth.service';
 
-export function jwtOptionsFactory(authService: AuthService) {
+
+export function jwtOptionsFactory(cookie: CookieService) {
   return {
     tokenGetter: () => {
-      return authService.getToken();
+      return cookie.get('token');
     }
   }
 }
@@ -30,14 +31,15 @@ export function jwtOptionsFactory(authService: AuthService) {
       jwtOptionsProvider: {
         provide: JWT_OPTIONS,
         useFactory: jwtOptionsFactory,
-        deps: [AuthService]
+        deps: [CookieService]
       }
     })
   ],
   providers: [
     CookieService,
     AuthService,
-    JwtHelperService
+    JwtHelperService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

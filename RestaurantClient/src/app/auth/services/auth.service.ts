@@ -26,6 +26,7 @@ export class AuthService {
         map((response : any) =>{
           this.cookieService.set('token', response.token);
        //   console.log(this.cookieService.get('token'))
+          localStorage.setItem('token', response.token)
           this.decodedToken = this.jwtHelper.decodeToken(response.token);
           console.log(this.decodedToken);
           
@@ -38,7 +39,7 @@ export class AuthService {
     return this.http.post(this.baseUrl+'register',  model)
   }
 
-  getToken(){
+ public async getToken(){
     return this.cookieService.get('token');
   }
 
