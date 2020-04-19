@@ -82,6 +82,7 @@ namespace RestaurantWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(x => x.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
 
             app.UseSwagger();
             app.UseSwaggerUI(opt =>

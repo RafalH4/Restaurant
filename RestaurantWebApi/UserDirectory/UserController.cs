@@ -29,7 +29,7 @@ namespace RestaurantWebApi.UserDirectory
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromForm]UserLoginDto user)
+        public async Task<IActionResult> Login([FromBody]UserLoginDto user)
         {
             var token = await _userService.Login(user);
             return Ok(new
