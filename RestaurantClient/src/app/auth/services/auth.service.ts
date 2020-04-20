@@ -36,9 +36,12 @@ export class AuthService {
   }
 
   logout(){
-    if(!this.cookieService.get('token'))
+    if(!this.cookieService.get('token')) {
       alert("Nie jesteś zalogowany")
+      return 0;
+    }
     this.cookieService.delete('token');
+    alert("Wylogowano poprawnie")
     this.router.navigate(['']);
   }
 
