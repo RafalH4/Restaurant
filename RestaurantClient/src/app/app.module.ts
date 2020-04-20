@@ -8,6 +8,8 @@ import { AuthRoutingModule } from './auth/auth-routing.module';
 import { CookieService} from 'ngx-cookie-service'
 import { JwtHelperService, JwtModule, JWT_OPTIONS } from "@auth0/angular-jwt";
 import { AuthService } from './auth/services/auth.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenIntereceptor } from './auth/services/TokenInterceptor';
 
 
 export function jwtOptionsFactory(cookie: CookieService) {
@@ -39,7 +41,12 @@ export function jwtOptionsFactory(cookie: CookieService) {
     CookieService,
     AuthService,
     JwtHelperService,
-    CookieService
+    CookieService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenIntereceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
