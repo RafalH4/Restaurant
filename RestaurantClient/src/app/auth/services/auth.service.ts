@@ -6,6 +6,7 @@ import { User } from 'src/app/models/user.model';
 import { map } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +19,14 @@ export class AuthService {
 
   constructor(private http: HttpClient,
     private cookieService: CookieService,
-    private jwtHelper: JwtHelperService) { }
+    private jwtHelper: JwtHelperService,
+    private router: Router) { }
 
   login(model: FormGroup){
     return this.http.post(this.baseUrl+'/login', model)
       .pipe(
         map((response : any) =>{
           this.cookieService.set('token', response.token);
-       //   console.log(this.cookieService.get('token'))
-          localStorage.setItem('token', response.token)
           this.decodedToken = this.jwtHelper.decodeToken(response.token);
           console.log(this.decodedToken);
           
@@ -35,13 +35,26 @@ export class AuthService {
     
   }
 
+  logout(){
+    if(!this.cookieService.get('token'))
+      alert("Nie jesteś zalogowany")
+    this.cookieService.delete('token');
+    this.router.navigate(['']);
+  }
+
   register(model : FormGroup){
     return this.http.post(this.baseUrl+'register',  model)
   }
 
- public async getToken(){
+ getToken(){
     return this.cookieService.get('token');
   }
+
+  loggedIn() {
+    const token = this.cookieService.get('token');
+    return !this.jwtHelper.isTokenExpired(token);
+  }
+
 
 
 }
