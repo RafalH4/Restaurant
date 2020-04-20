@@ -32,7 +32,7 @@ namespace RestaurantWebApi.UserDirectory
             var newUser = new User();
             newUser.Id = Guid.NewGuid();
             newUser.Email = user.Email;
-            newUser.passwordSalt = hmac.Key;
+            newUser.PasswordSalt = hmac.Key;
             newUser.PasswordHash = hmac.ComputeHash(Encoding.ASCII.GetBytes(user.Password));
 
             await _userRepository.Add(newUser);
@@ -47,7 +47,10 @@ namespace RestaurantWebApi.UserDirectory
         {
             var userFromDb = await _userRepository.GetByUserName(userLogin.Email);
             if (userFromDb == null)
-                throw new Exception("Bad user");
+                throw new Exception("No user");
+            if (!userFromDb.CheckPassword(userLogin.Password))
+                throw new Exception("Bad password");
+
             return _jwtHandler.CreateToken(userFromDb);
         }
     }
