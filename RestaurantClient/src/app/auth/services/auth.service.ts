@@ -46,7 +46,7 @@ export class AuthService {
   }
 
   register(model : FormGroup){
-    return this.http.post(this.baseUrl+'register',  model)
+    return this.http.post(this.baseUrl+'/register',  model)
   }
 
  getToken(){

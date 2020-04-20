@@ -20,9 +20,8 @@ namespace RestaurantWebApi.UserDirectory
             _userService = userService;
         }
 
-        [Authorize(Policy = "secure")]
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromForm]AddUserDto user)
+        public async Task<IActionResult> Register([FromBody]AddUserDto user)
         {
             await _userService.Add(user);
             return Ok();

@@ -7,6 +7,7 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { HeaderComponent } from './header/header.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { PagesRoutingModule } from './pages-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -21,7 +22,8 @@ import { PagesRoutingModule } from './pages-routing.module';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    RouterModule
   ]
 })
 export class PagesModule { }
