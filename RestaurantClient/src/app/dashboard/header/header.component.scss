@@ -1,0 +1,12 @@
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #ff6b09;
+    font-size: 3rem;
+}

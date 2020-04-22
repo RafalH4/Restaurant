@@ -9,7 +9,7 @@ import { CookieService} from 'ngx-cookie-service'
 import { JwtHelperService, JwtModule, JWT_OPTIONS } from "@auth0/angular-jwt";
 import { AuthService } from './auth/services/auth.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenIntereceptor } from './auth/services/TokenInterceptor';
+import { TokenIntereceptor } from './auth/services/tokenInterceptor';
 
 
 export function jwtOptionsFactory(cookie: CookieService) {
