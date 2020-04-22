@@ -9,7 +9,15 @@
     </nav>
     <div class="dishList">
         <div class="dishItem" *ngFor="let dish of dishes">
-          <app-dish-item [dish]="dish"></app-dish-item>
+        <div class="container">
+            <img [src]="dish.imgUrl">
+            <h1>{{dish.name}}</h1>
+            <hr>
+            {{dish.description}}
+            <hr>
+            Cena: {{dish.price}}
+            <button (click)="orderDish(dish)">Zamawiam</button>
+        </div>
         
         </div>
     </div>

@@ -3,6 +3,11 @@
         Twoje zamówienie
     </div>
     <div class="orderList">
-
+        <div *ngIf="dishes.length==0">
+            Twoje zamówienie jest puste
+        </div>
+        <div *ngFor="let dish of dishes">
+            {{dish.name}}
+        </div>
     </div>
 </div>

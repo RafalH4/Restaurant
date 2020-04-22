@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Dish } from 'src/app/models/dish.model';
 
 @Component({
@@ -7,6 +7,7 @@ import { Dish } from 'src/app/models/dish.model';
   styleUrls: ['./dish-list.component.scss']
 })
 export class DishListComponent implements OnInit {
+  @Output() dishEmitter = new EventEmitter<Dish>()
 
   dishes: Dish[] = [
     new Dish("Ruskie pierogi", "8 pierogów z ziemniakami", 10, "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Ruskie.jpg/330px-Ruskie.jpg"),
@@ -20,6 +21,10 @@ export class DishListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  orderDish(dish){
+    this.dishEmitter.emit(dish);
   }
 
 }

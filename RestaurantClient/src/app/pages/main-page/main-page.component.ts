@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-main-page',
@@ -9,7 +9,12 @@ export class MainPageComponent implements OnInit {
 
   constructor() { }
 
+  dish;
   ngOnInit(): void {
+  }
+
+  getDish(event) {
+    this.dish=event;
   }
 
 }
