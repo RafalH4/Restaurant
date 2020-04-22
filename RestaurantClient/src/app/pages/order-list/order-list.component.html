@@ -6,8 +6,13 @@
         <div *ngIf="dishes.length==0">
             Twoje zamówienie jest puste
         </div>
-        <div *ngFor="let dish of dishes">
-            {{dish.name}}
+        <div *ngFor="let dish of dishes; let i = index" class="order_item">
+            <h3>{{dish.name}}</h3>
+            <h4>{{dish.description}}</h4>
+            <h4>{{dish.price}}</h4>
+            Ilość: {{dish.amount}}
+            <button (click)="plusDish(i)">+</button>
+            <button (click)="minusDish(i)">-</button>
         </div>
     </div>
 </div>
