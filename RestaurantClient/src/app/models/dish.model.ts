@@ -4,7 +4,6 @@ export class Dish{
         public description: string,
         public price: number,
         public imgUrl: string,
-        public amount: number=1
         ){}
 
     }

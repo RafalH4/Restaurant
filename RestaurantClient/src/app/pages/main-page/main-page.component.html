@@ -1,8 +1,8 @@
 <div class="container">
     <app-header> </app-header>
     <div class="userView">
-      <app-dish-list (dishEmitter)="getDish($event)"></app-dish-list>
-      <app-order-list [dish] = dish></app-order-list>
+      <app-dish-list [menu] = "menu" (selectedDish) = "getDish($event)"></app-dish-list>
+      <app-order-list [dishes] = "dishes"></app-order-list>
     </div>
     <footer>Copyright by RafalH4</footer>
   </div>

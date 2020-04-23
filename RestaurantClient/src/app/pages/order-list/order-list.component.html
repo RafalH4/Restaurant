@@ -3,16 +3,16 @@
         Twoje zamówienie
     </div>
     <div class="orderList">
-        <div *ngIf="dishes.length==0">
+        <div *ngIf="dishes.size==0">
             Twoje zamówienie jest puste
         </div>
-        <div *ngFor="let dish of dishes; let i = index" class="order_item">
-            <h3>{{dish.name}}</h3>
-            <h4>{{dish.description}}</h4>
-            <h4>{{dish.price}}</h4>
-            Ilość: {{dish.amount}}
-            <button (click)="plusDish(i)">+</button>
-            <button (click)="minusDish(i)">-</button>
+        <div *ngFor="let dish of dishes| keyvalue" class="order_item">
+            <h3>{{dish.key.name}}</h3>
+            <h4>{{dish.key.description}}</h4>
+            <h4>{{dish.key.price}}</h4>
+            Ilość: {{dish.value}}
+            <button (click)="plusDish(dish.key)">+</button>
+            <button (click)="minusDish(dish.key)">-</button>
         </div>
     </div>
 </div>

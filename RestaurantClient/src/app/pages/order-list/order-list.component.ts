@@ -6,46 +6,23 @@ import { Dish } from 'src/app/models/dish.model';
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.scss']
 })
-export class OrderListComponent implements DoCheck, OnChanges {
+export class OrderListComponent {
 
   constructor() { }
-  ngDoCheck(): void {
-    console.log()
-  }
 
-  dishes:Dish[]= []
-  @Input() dish:Dish;
 
-  ngOnChanges(): void {
-    if(this.dish)
-    {
-      if(this.dishes.includes(this.dish))
-      {
-        let element = this.dishes.indexOf(this.dish);
-        this.dishes[element].amount++;
-      }
-      else
-      {
-        this.dishes.push(this.dish)
-      }
-    }
+  @Input() dishes = new Map()
 
-   
-  }
-  plusDish(index)
+  plusDish(dish)
   {
-    this.dishes[index].amount++;
+    this.dishes.set(dish, this.dishes.get(dish)+1)
   }
-  minusDish(index)
+  minusDish(dish)
   {
-    if(this.dishes[index].amount==1)
-    {
-      this.dishes.splice(index, 1)
-    }
+    if(this.dishes.get(dish)==1)
+      this.dishes.delete(dish);
     else
-    {
-      this.dishes[index].amount--
-    }
-  }
+      this.dishes.set(dish, this.dishes.get(dish)-1)
+   }
 
 }

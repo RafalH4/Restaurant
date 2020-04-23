@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Dish } from 'src/app/models/dish.model';
 
 @Component({
@@ -7,24 +7,17 @@ import { Dish } from 'src/app/models/dish.model';
   styleUrls: ['./dish-list.component.scss']
 })
 export class DishListComponent implements OnInit {
-  @Output() dishEmitter = new EventEmitter<Dish>()
 
-  dishes: Dish[] = [
-    new Dish("Ruskie pierogi", "8 pierogów z ziemniakami", 10, "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Ruskie.jpg/330px-Ruskie.jpg"),
-    new Dish("Schabowy", "Zestaw obiadowy: ziemniaki, schabowy, surówka", 20, "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/0003_kotlet_schabowy_2013%2C_photo_by_Silar.JPG/800px-0003_kotlet_schabowy_2013%2C_photo_by_Silar.JPG"),
-    new Dish("Ruskie pierogi", "8 pierogów z ziemniakami", 10, "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Ruskie.jpg/330px-Ruskie.jpg"),
-    new Dish("Schabowy", "Zestaw obiadowy: ziemniaki, schabowy, surówka", 20, "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/0003_kotlet_schabowy_2013%2C_photo_by_Silar.JPG/800px-0003_kotlet_schabowy_2013%2C_photo_by_Silar.JPG"),
-    new Dish("Ruskie pierogi", "8 pierogów z ziemniakami", 10, "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Ruskie.jpg/330px-Ruskie.jpg"),
-    new Dish("Schabowy", "Zestaw obiadowy: ziemniaki, schabowy, surówka", 20, "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/0003_kotlet_schabowy_2013%2C_photo_by_Silar.JPG/800px-0003_kotlet_schabowy_2013%2C_photo_by_Silar.JPG")
-  
-  ]
+
+  @Input() menu: Dish[];
+  @Output() selectedDish = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
   }
-
   orderDish(dish){
-    this.dishEmitter.emit(dish);
+    this.selectedDish.emit(dish)
   }
+
 
 }
