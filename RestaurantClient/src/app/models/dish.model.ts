@@ -1,9 +1,6 @@
-export class Dish{
-    constructor(
-        public name: string,
-        public description: string,
-        public price: number,
-        public imgUrl: string,
-        ){}
-
-    }
+export interface Dish {
+    name: string,
+    description: string,
+    price: number,
+    imgUrl: string,
+}

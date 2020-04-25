@@ -6,7 +6,7 @@
         <div *ngIf="dishes.size==0">
             Twoje zamówienie jest puste
         </div>
-        <div *ngFor="let dish of dishes| keyvalue" class="order_item">
+        <div *ngFor="let dish of dishes | keyvalue" class="order_item">
             <h3>{{dish.key.name}}</h3>
             <h4>{{dish.key.description}}</h4>
             <h4>{{dish.key.price}}</h4>
@@ -14,5 +14,6 @@
             <button (click)="plusDish(dish.key)">+</button>
             <button (click)="minusDish(dish.key)">-</button>
         </div>
+        <button (click)="submit()">Zamów</button>
     </div>
 </div>

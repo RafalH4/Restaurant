@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Dish } from 'src/app/models/dish.model';
 
 @Component({
@@ -8,16 +8,14 @@ import { Dish } from 'src/app/models/dish.model';
 })
 export class DishListComponent implements OnInit {
 
-
   @Input() menu: Dish[];
-  @Output() selectedDish = new EventEmitter()
-  constructor() { }
+  @Output() selectedDish = new EventEmitter<Dish>();
 
-  ngOnInit(): void {
-  }
-  orderDish(dish){
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  orderDish(dish: Dish): void {
     this.selectedDish.emit(dish)
   }
-
-
 }

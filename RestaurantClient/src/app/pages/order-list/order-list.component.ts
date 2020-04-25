@@ -1,5 +1,10 @@
-import { Component, OnInit, Input, OnChanges, DoCheck } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Dish } from 'src/app/models/dish.model';
+
+interface OrderItem {
+  dishId: number;
+  quantity: number;
+}
 
 @Component({
   selector: 'app-order-list',
@@ -7,22 +12,25 @@ import { Dish } from 'src/app/models/dish.model';
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent {
-
   constructor() { }
 
+  @Input() dishes = new Map<Dish, number>();
 
-  @Input() dishes = new Map()
-
-  plusDish(dish)
-  {
+  plusDish(dish) {
     this.dishes.set(dish, this.dishes.get(dish)+1)
   }
-  minusDish(dish)
-  {
+  
+  minusDish(dish) {
     if(this.dishes.get(dish)==1)
       this.dishes.delete(dish);
     else
       this.dishes.set(dish, this.dishes.get(dish)-1)
-   }
+  }
 
+  submit(): void {
+    const orderItems: OrderItem[] = [];
+    // this.dishes => OrderItem[]
+    console.log(orderItems);
+    // this.service.order(orderItems)
+  }
 }

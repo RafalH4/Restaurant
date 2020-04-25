@@ -36,8 +36,6 @@ namespace RestaurantWebApi.DishDirectory
             return _mapper.Map<DishDto>(dish);
         }
               
-        
-
         public async Task<IEnumerable<DishDto>> GetByType(string type)
         {
             var dishes = await _repository.GetByType(type);
